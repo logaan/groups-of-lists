@@ -1,0 +1,14 @@
+<h1><%= @group.name %></h1>
+
+<%= link_to "New task", new_group_task_path(@group) %>
+
+<% if @group.tasks.present? %>
+  <ul>
+    <% for task in @group.tasks %>
+      <li><%= link_to task.name, task %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No tasks for this group</p>
+<% end %>
+
